@@ -11,6 +11,9 @@ extension MainView {
         // Ask the timeline list to refresh so other cards stay in sync.
         refreshActivitiesTrigger &+= 1
 
+        // Refresh the review summary to reflect the category change.
+        reviewSummaryRefreshToken &+= 1
+
         guard let recordId = activity.recordId else { return }
 
         // Persist the change off the main actor to avoid blocking UI interactions.
